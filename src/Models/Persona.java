@@ -1,18 +1,25 @@
+package Models;
+
 public class Persona {
+
     //Clase es como definimos el prototipo de un objeto, indicando los atributos y funcionalidades
     //Para entenderlo, podemos pensar en él como una especie de plano (att: Francisco Troncoso)
     //Esta clase cuando la instanciamos ocupamos un espacio en memoria
+
     //Atributos:
-    String nombre;
-    Integer edad;
-    Double altura;
-    Double peso;
+    //Para implementar encapsulación siempre dejar los atributos como privados
+    private String nombre;
+    private Integer edad;
+    private Double altura;
+    private Double peso;
+
 
     //Para crear la instancia de un objeto usamos constructores
     //Constructores:
     //Vacío: Nos permite crear una instancia vacía del objeto, sin asignar valores a sus atributos
     public Persona() {
     }
+
     //Lleno: Permite crear una instancia del objeto con todos sus campos llenos
     public Persona(String nombre, Integer edad, Double altura, Double peso) {
         this.nombre = nombre;
@@ -56,15 +63,22 @@ public class Persona {
         this.peso = peso;
     }
 
+
     //Métodos o funciones propias del objeto
-    public void caminar(int energia) {
+    private void caminar(int energia) {
         System.out.println("Se necesita " + energia + "para caminar");
     }
+
+    //Los argumentos hacen
+    public void socializar(Persona persona1, Persona persona2) {
+        System.out.println(persona1.getNombre() + " Se comunica con la persona " + persona2.getNombre());
+    }
+
 
     //Método ToString, para poder imprimir el contenido en vez del espacio de memoria
     @Override
     public String toString() {
-        return "Persona{" +
+        return "{" +
                 "nombre='" + nombre + '\'' +
                 ", edad=" + edad +
                 ", altura=" + altura +
